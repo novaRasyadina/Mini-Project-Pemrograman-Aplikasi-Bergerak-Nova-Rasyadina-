@@ -122,8 +122,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 ```
-HomeScreen menggunakan StatefulWidget karena daftar jurnal (_list) bisa berubah sewaktu-waktu akibat aksi tambah, edit, atau hapus — dan setiap perubahan harus membuat UI ikut diperbarui. _list adalah List<Journal> yang dimulai kosong, menjadi tempat penyimpanan semua entri jurnal selama aplikasi berjalan. selanjutnya erdapat fungsi yang menangani dua kondisi sekaligus yaitu 
-menambah jurnal baru dan mengedit jurnal lama. [Journal? j, int? i] yang berarti opsional, jika dipanggil tanpa argumen maka mode tambah baru, jika dipanggil dengan data jurnal dan index-nya maka mode edit. await Get.to() membuka FormScreen dan menunggu hasilnya setelah layar ditutup. Jika user menyimpan data, result berisi Map yang diterima sebagai res. Lalu setState() dipanggil untuk memperbarui UI jika mode update, data lama diganti di index yang sama; jika mode tambah, data baru disisipkan di posisi paling atas list.
+HomeScreen menggunakan StatefulWidget karena daftar jurnal (_list) bisa berubah sewaktu-waktu akibat aksi tambah, edit, atau hapus, dan setiap perubahan harus membuat UI ikut diperbarui. _list adalah List<Journal> yang dimulai kosong, menjadi tempat penyimpanan semua entri jurnal selama aplikasi berjalan. selanjutnya erdapat fungsi yang menangani dua kondisi sekaligus yaitu 
+menambah jurnal baru dan mengedit jurnal lama. [Journal? j, int? i] yang berarti opsional, jika dipanggil tanpa argumen maka mode tambah baru, jika dipanggil dengan data jurnal dan index nya maka mode edit. await Get.to() membuka FormScreen dan menunggu hasilnya setelah layar ditutup. Jika user menyimpan data, result berisi Map yang diterima sebagai res. Lalu setState() dipanggil untuk memperbarui UI jika mode update, data lama diganti di index yang sama; jika mode tambah, data baru disisipkan di posisi paling atas list.
 
 ```dart
 void _delete(int i) {
@@ -293,7 +293,7 @@ Kode di atas yang dimulai dengan Expanded digunakan untuk menaruh list jurnal ya
   }
 }
 ```
-_empty() adalah widget yang ditampilkan ketika belum ada jurnal sama sekali, berisi ikon buku dan teks panduan. _card() adalah tampilan setiap penambahan jurnal dalam bentuk kartu. Kartu dibungkus Dismissible agar bisa dihapus dengan swipe ke kiri saat swipe, background merah dengan ikon tempat sampah akan terlihat, dan setelah animasi selesai _delete() dipanggil. Kartu juga dibungkus GestureDetector sehingga ketika di-tap, form edit terbuka.
+_empty() adalah widget yang ditampilkan ketika belum ada jurnal sama sekali, berisi ikon buku dan teks panduan. _card() adalah tampilan setiap penambahan jurnal dalam bentuk kartu. Kartu dibungkus Dismissible agar bisa dihapus dengan swipe ke kiri saat swipe, background merah dengan ikon tempat sampah akan terlihat, dan setelah animasi selesai _delete() dipanggil. Kartu juga dibungkus GestureDetector sehingga ketika di tap, form edit terbuka.
 
 ```dart
 class FormScreen extends StatefulWidget {
@@ -311,7 +311,7 @@ class _FormScreenState extends State<FormScreen> {
 
   final _moods = ['😊','😢','😤','😴','🥰','😰','🤩','😌'];
 ```
-FormScreen digunakan untuk dua keperluan sekaligus, yaitu menambah jurnal baru dan mengedit yang lama. Parameter journal bertanda ? (nullable) jika null berarti mode tambah, jika berisi data berarti mode edit. index menyimpan posisi jurnal di list, digunakan saat update agar data ditulis di tempat yang benar. kemudian adalah kode yang diatur untuk memilih emot sesuai dengan suasana hati pengguna.
+FormScreen digunakan untuk dua keperluan sekaligus, yaitu menambah jurnal baru dan mengedit yang lama. Parameter journal bertanda ? jika null berarti mode tambah, jika berisi data berarti mode edit. index menyimpan posisi jurnal di list, digunakan saat update agar data ditulis di tempat yang benar. kemudian adalah kode yang diatur untuk memilih emot sesuai dengan suasana hati pengguna.
 
 ```dart
 @override
@@ -356,7 +356,7 @@ initState() dipanggil sekali saat widget pertama dibuat. Di sini ketiga TextEdit
     });
   }
 ```
-_pickDate() membuka dialog kalender bawaan Flutter. Setelah user memilih tanggal, DateTime yang dikembalikan dikonversi ke format string "YYYY-MM-DD" menggunakan .substring(0, 10), lalu dimasukkan ke controller _date. Pemeriksaan if (d != null) memastikan field tidak berubah jika user menekan cancel. kemudian ada kode _save() pertama-tama menjalankan validasi seluruh form dengan _form.currentState!.validate(). Jika ada field yang kosong, pesan error muncul di bawah field tersebut dan fungsi berhenti. Jika semua valid, Get.back() menutup layar dan mengirimkan data sebagai result berupa Map — berisi objek Journal baru, flag update (true/false), dan index yang akan diterima kembali oleh HomeScreen.
+_pickDate() membuka dialog kalender bawaan Flutter. Setelah user memilih tanggal, DateTime yang dikembalikan dikonversi ke format string "YYYY-MM-DD" menggunakan .substring(0, 10), lalu dimasukkan ke controller _date. Pemeriksaan if (d != null) memastikan field tidak berubah jika user menekan cancel. kemudian ada kode _save() pertama-tama menjalankan validasi seluruh form dengan _form.currentState!.validate(). Jika ada field yang kosong, pesan error muncul di bawah field tersebut dan fungsi berhenti. Jika semua valid, Get.back() menutup layar dan mengirimkan data sebagai result berupa Map berisi objek Journal baru, flag update (true/false), dan index yang akan diterima kembali oleh HomeScreen.
 
 ```dart
  @override
