@@ -22,5 +22,47 @@ Fitur-fitur yang ada dalam aplikasi daily journal meliputi
 ### Widget Yang Digunakan 
 
 #### Widget Struktur & Layout:
+* GetMaterialApp sebagai root aplikasi dengan GetX
+* Scaffold sebagai struktur dasar halaman (body, FAB)
+* SafeArea untuk mencega konten tertutup status bar
+* Column untuk menyusun widget secara vertikal
+* Row untuk menyusun widget secara horizontal
+* Expanded untuk mengisi sisa ruang yang tersedia
+* Spacer untuk mendorong widget ke ujung dalam Row/Column
+* SizedBox Memberikan jarak /ukuran tetap
+* padding menambahkan padding di sekeliling widget
+* SingleChildScrollView membuat konten agar dapat di scroll
+
+#### Widget Tampilan:
+* Container yaitu widget dengan dekorasi warna, shadow, border radius.
+* Card yaitu kartu dengan shadow bawaan material
+* Text untuk menampilkan teks
+* Icon untuk menampilkan ikon material
+* Divider yaitu garis pemisah horizontal
+* AnimatedContainer yaitu container dengan animasi saat properti berubah(src=Blackbox AI ^_^)
+#### Widget Input
+* Form, yaitu Wrapper form dengan GlobalKey validasi
+* TextFormField untuk input teks dengan validator bawaan
+* TextEditingController untuk mengontrol dan membaca isi TextField
+* GlobalKey<FromState> yaitu kunci untuk mengakses state form (alidasi)
+* ShowDatePicker adalah dialog kalender bawaan dari flutter
+
+#### Widget Interaksi:
+* GestureDetector untuk mendeteksi gesture tap pada widget
+* Dismissible digunakan utnuk widget dihapus dengan swipe
+* FloatingActionButton.extended yaitu tombol aksi utama di pojok kanan bawah
+* ElevatedButton yaitu tombol dengan efek elevated (mengambang)
+* IconButton yaitu tombol berbentuk ikon
+* TextButton yaitu tombol teks(dipakai di snackbar UNDO)
+* ListView.Builder yaitu daftar item efisien
+* ListView adalah daftar item dengan scroll (dipakai mood selector)
+
+#### Widget GetX
+* Get.to() untuk Navigasi ke halaman baru
+* Get.back() untuk kembali ke halaman sebelumnya dan kirim hasil
+* Get.snackbar() untuk menampilkan notifikasi snackbar
+
+
+
 
   
