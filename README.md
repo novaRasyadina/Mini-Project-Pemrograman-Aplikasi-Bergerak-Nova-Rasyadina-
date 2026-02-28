@@ -504,5 +504,19 @@ _pickDate() membuka dialog kalender bawaan Flutter. Setelah user memilih tanggal
 Kode di atas adalah bagian build() dari FormScreen, yaitu layar untuk menambah atau mengedit jurnal. Variabel isEdit dibuat di awal untuk menentukan mode layar yang nilainya true jika sedang mengedit, false jika tambah baru. Variabel ini digunakan untuk mengubah judul halaman dan teks tombol simpan tanpa perlu membuat dua layar terpisah. Struktur layar dibagi menjadi tiga bagian. Top bar berisi tombol X untuk kembali tanpa menyimpan dan judul halaman di tengah. Konten form dibungkus SingleChildScrollView agar bisa di scroll ketika keyboard muncul. Tombol simpan diletakkan di luar scroll area agar selalu terlihat di bagian bawah layar. Di dalam form terdapat empat input. Mood selector menampilkan deretan emoji horizontal, nantinya emoji yang dipilih berubah warna dengan animasi 180ms. TextField tanggal di-set enabled, false sehingga pengisian hanya bisa dilakukan lewat date picker. TextField judul menggunakan font besar agar terasa seperti menulis judul buku harian. TextField isi jurnal memiliki tinggi minimalnya 10 baris dan bisa terus membesar sesuai panjang tulisan. Ketiga TextFormField memiliki validator masing-masing. Jika ada field yang kosong saat tombol ditekan, pesan error akan muncul. Jika semua terisi, fungsi _save() dipanggil untuk mengirim data kembali ke HomeScreen.
 
 ## Dokumentasi Aplikasi Daily Journal
+<img width="959" height="913" alt="{DEEB6FE8-D83C-4749-9A72-F1B49D37A97B}" src="https://github.com/user-attachments/assets/b18b041c-4c79-4a1c-bb46-740146a91dd5" />
 
-  
+<img width="957" height="910" alt="{19F4362C-DCE2-4B62-B44A-AFAA70731FF9}" src="https://github.com/user-attachments/assets/01edaee4-02ba-45fe-bbf1-42091a0288eb" />
+
+<img width="961" height="912" alt="{5C671502-A25A-423A-89F9-B2AD049AC2CF}" src="https://github.com/user-attachments/assets/3c730969-aca5-4873-84a5-125f9b7bb88a" />
+
+<img width="956" height="913" alt="{8ECF4A2F-E1B2-44FF-9D26-9E821EB2C1AB}" src="https://github.com/user-attachments/assets/4fa7703a-0b30-4658-9337-93f2b4b384ba" />
+
+<img width="956" height="915" alt="{5527524E-F488-411E-B7BE-21AF820C927B}" src="https://github.com/user-attachments/assets/15c24a9f-1371-40f6-975b-2804d6dec672" />
+
+<img width="960" height="913" alt="{11E8F4A5-8A52-447A-8FCD-5D71BD98ECB4}" src="https://github.com/user-attachments/assets/378d00a7-b439-4b7f-a235-83a1ada732a1" />
+
+<img width="960" height="912" alt="{B9CC1A24-2BFC-4670-8C7B-8564921077FA}" src="https://github.com/user-attachments/assets/8f6882e9-363a-414d-8903-edb0104fe800" />
+
+ <img width="958" height="915" alt="{3F168C5C-4866-4362-A8CD-CE0289B02A18}" src="https://github.com/user-attachments/assets/dedb012f-e0ec-4a2a-ae54-85a22ce04466" />
+ 
